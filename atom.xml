@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Paradoxical Delusions]]></title>
+  <link href="http://b1n.github.io/atom.xml" rel="self"/>
+  <link href="http://b1n.github.io/"/>
+  <updated>2014-04-21T04:30:22+00:00</updated>
+  <id>http://b1n.github.io/</id>
+  <author>
+    <name><![CDATA[Marcio Ribeiro]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hell Yeah Cheat]]></title>
+    <link href="http://b1n.github.io/blog/2014/04/21/hell-yeah-cheat/"/>
+    <updated>2014-04-21T04:29:50+00:00</updated>
+    <id>http://b1n.github.io/blog/2014/04/21/hell-yeah-cheat</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+</feed>
