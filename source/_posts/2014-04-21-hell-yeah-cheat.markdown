@@ -12,7 +12,7 @@ _Altered Beast_, _Golden Axe_ and the fantastic [The Typing of The Dead: Overkil
 was [Hell Yeah! Wrath of the Dead Rabbit](http://store.steampowered.com/app/205230/).
 
 ## Sonic on Steroids!
-{% img /images/hell-yeah-splash.png 1024 800 'Sonic on Steroids!' %}
+{% img /images/hell-yeah-splash.jpg 1024 800 'Sonic on Steroids!' %}
 Hell Yeah is a crazy action-adventure platformer, full of cartoon violence and toilet humor.
 Instant fun for all ages!
 Do not let the somewhat low _metacritic_ score fool you. Hell Yeah! is **crazy** good.
@@ -42,7 +42,7 @@ tale would end quickly and bed would see a happier me with 100% achievements
 soon. I could not be more wrong...
 
 ### Windows Script Turn
-What is the quickest way get this done? [WSH](http://en.wikipedia.org/wiki/Windows_Script_Host), I choose you!
+What is the quickest way to get this done? [WSH](http://en.wikipedia.org/wiki/Windows_Script_Host), I choose you!
 ``` vb.net Gotta love the simplicity imbued in all form of scripting...
 ' Create shell object that can "type" keys
 Set s = WScript.CreateObject("WScript.Shell")
@@ -108,21 +108,22 @@ Fixed the blanket and kissed her good night. I had a mission to accomplish!
 
 We were getting into the late hours, further into the night.
 Cats fighting and hounds barking could sporadically be heard on the streets, time to master
-focus and boost solution making:
-* **Headphones**: _Check_
-* **Good Music**: _Check_
-* **Energy Drink**: _Check_ _Check_ _Check_
+focus and boost ninja problem solving mad-skills:
+
+  - **Headphones**: _Check_
+  - **Good Music**: _Check_
+  - **Energy Drink**: _Check_ _Check_ _Check_
 
 Nothing can stop me now, I will get this done!
 
-Think, what is wrong? Why is the game not getting the keypress events?
+Think! What is wrong? Why is the game not getting the keypress events?
 
 What about sending the keys in raw directly to Win32 API?
 Calling _SendInput_ from _user32.dll_ should do it.
 The options are JNI, C/C++ and C#.
 Started downloading *.NET SDK* and [Xamarin](http://en.wikipedia.org/wiki/Xamarin).
 
-#### .NET Turn
+### .NET Turn
 After reading several pages on [MSDN](http://msdn.microsoft.com/en-us/library/windows/desktop/ms646310(v=vs.85\).aspx) and
 related forums about how the _SendInput_ function and the **INPUT** data structure works, things started making sense.
 
@@ -233,20 +234,19 @@ namespace Jackpot
 Yes, that is a lot more code than I thought was necessary to emulate a simple keyPress using the Win32 API and guess what... it does **NOT** work.
 The reasons why this does not work are beyond me but I bet DirectInput is to blame.
 
-No more cat fights or barks, birds started singing instead, enunciating the first sheds of sunlight.
+No more cat fights or barks, dawn birds started singing instead, enunciating the first sheds of sunlight.
 
 My hope was beaten to a pulp.
 I was tired, very tired and suddenly noticed I had not eaten for the past several hours.
 Headaches started consuming me... Giving up crossed my mind but not before one last shot.
 I can do this!
 
-#### Interceptor saves the day
+### Interceptor saves the day
 Light could be seen at the end of tunnel. Hopefully it was not the train.
 
-[Interceptor](https://github.com/jasonpang/Interceptor) promissed to simulate keystrokes to _DirectX_ games.
-
+[Interceptor](https://github.com/jasonpang/Interceptor) promissed to simulate keystrokes to _DirectX_ games.  
 Followed the installation instructions and wrote some code:
-``` c#
+``` c# Nothing like loading a kernel module to heat things up...
 using Interceptor;
 using System.Threading;
 
@@ -285,10 +285,21 @@ namespace Jackpot
 Marcos, my younger boy, the proud owner of the laptop I had recently transformed into a powerhouse development station,
 woke up. Just in time to hear the fantastic story of how his daddy spent a whole night trying to cheat in a game.
 
-"Marcos, of course cheating is **wrong**. I did out of curiosity! You see, knowing how to bend the rules does **not**
+"Marcos, of course cheating is **wrong**. I did it out of curiosity! You see, knowing how to bend the rules does **not**
 mean you absolutelly have to. In fact, you can help make the world a better place if you know about this kind of stuff! (...)"
 
-And it worked like a charm:
-{% img /images/hell-yeah-jackpot.png 1024 800 'To the victor go the spoils' %}
+There was a slight contemplative period of silence, while he looked puzzled to the slot machine being rolled with no
+human interaction, as if by **Magic**!
+
+After approximately 50 minutes and 5500 **E** key presses... **JACKPOT**!!
+{% img /images/hell-yeah-jackpot.jpg 1024 800 'To the victor go the spoils' %}
 {% img /images/hell-yeah-all-achievements.png 1024 800 '100% achievements... I can finally rest in peace' %}
+
+"Daddy, why didn't you build a _Homer Drinking Bird_?" - He asked
+
+"What is that?" - I replied
+
+{% img /images/homer-drinking-bird.png %}
+
+Brilliant! :)
 
