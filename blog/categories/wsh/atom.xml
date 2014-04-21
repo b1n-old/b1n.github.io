@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Wsh | Paradoxical Delusions]]></title>
   <link href="http://b1n.github.io/blog/categories/wsh/atom.xml" rel="self"/>
   <link href="http://b1n.github.io/"/>
-  <updated>2014-04-21T12:00:47+00:00</updated>
+  <updated>2014-04-21T14:08:26+00:00</updated>
   <id>http://b1n.github.io/</id>
   <author>
     <name><![CDATA[Marcio Ribeiro]]></name>
@@ -25,7 +25,7 @@ was <a href="http://store.steampowered.com/app/205230/">Hell Yeah! Wrath of the 
 
 <h2>Sonic on Steroids!</h2>
 
-<p><img src="/images/hell-yeah-splash.png" width="1024" height="800" title="&lsquo;Sonic on Steroids!&rsquo;" >
+<p><img src="/images/hell-yeah-splash.jpg" width="1024" height="800" title="&lsquo;Sonic on Steroids!&rsquo;" >
 Hell Yeah is a crazy action-adventure platformer, full of cartoon violence and toilet humor.
 Instant fun for all ages!
 Do not let the somewhat low <em>metacritic</em> score fool you. Hell Yeah! is <strong>crazy</strong> good.</p>
@@ -58,7 +58,7 @@ soon. I could not be more wrong&hellip;</p>
 
 <h3>Windows Script Turn</h3>
 
-<p>What is the quickest way get this done? <a href="http://en.wikipedia.org/wiki/Windows_Script_Host">WSH</a>, I choose you!
+<p>What is the quickest way to get this done? <a href="http://en.wikipedia.org/wiki/Windows_Script_Host">WSH</a>, I choose you!
 ``` vb.net Gotta love the simplicity imbued in all form of scripting&hellip;
 &lsquo; Create shell object that can &ldquo;type&rdquo; keys
 Set s = WScript.CreateObject(&ldquo;WScript.Shell&rdquo;)</p>
@@ -131,21 +131,25 @@ Fixed the blanket and kissed her good night. I had a mission to accomplish!</p>
 
 <p>We were getting into the late hours, further into the night.
 Cats fighting and hounds barking could sporadically be heard on the streets, time to master
-focus and boost solution making:
-* <strong>Headphones</strong>: <em>Check</em>
-* <strong>Good Music</strong>: <em>Check</em>
-* <strong>Energy Drink</strong>: <em>Check</em> <em>Check</em> <em>Check</em></p>
+focus and boost ninja problem solving mad-skills:</p>
+
+<ul>
+<li><strong>Headphones</strong>: <em>Check</em></li>
+<li><strong>Good Music</strong>: <em>Check</em></li>
+<li><strong>Energy Drink</strong>: <em>Check</em> <em>Check</em> <em>Check</em></li>
+</ul>
+
 
 <p>Nothing can stop me now, I will get this done!</p>
 
-<p>Think, what is wrong? Why is the game not getting the keypress events?</p>
+<p>Think! What is wrong? Why is the game not getting the keypress events?</p>
 
 <p>What about sending the keys in raw directly to Win32 API?
 Calling <em>SendInput</em> from <em>user32.dll</em> should do it.
 The options are JNI, C/C++ and C#.
 Started downloading <em>.NET SDK</em> and <a href="http://en.wikipedia.org/wiki/Xamarin">Xamarin</a>.</p>
 
-<h4>.NET Turn</h4>
+<h3>.NET Turn</h3>
 
 <p>After reading several pages on <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms646310(v=vs.85).aspx">MSDN</a> and
 related forums about how the <em>SendInput</em> function and the <strong>INPUT</strong> data structure works, things started making sense.</p>
@@ -260,21 +264,20 @@ static void Main (string[] args)
 <p>Yes, that is a lot more code than I thought was necessary to emulate a simple keyPress using the Win32 API and guess what&hellip; it does <strong>NOT</strong> work.
 The reasons why this does not work are beyond me but I bet DirectInput is to blame.</p>
 
-<p>No more cat fights or barks, birds started singing instead, enunciating the first sheds of sunlight.</p>
+<p>No more cat fights or barks, dawn birds started singing instead, enunciating the first sheds of sunlight.</p>
 
 <p>My hope was beaten to a pulp.
 I was tired, very tired and suddenly noticed I had not eaten for the past several hours.
 Headaches started consuming me&hellip; Giving up crossed my mind but not before one last shot.
 I can do this!</p>
 
-<h4>Interceptor saves the day</h4>
+<h3>Interceptor saves the day</h3>
 
 <p>Light could be seen at the end of tunnel. Hopefully it was not the train.</p>
 
-<p><a href="https://github.com/jasonpang/Interceptor">Interceptor</a> promissed to simulate keystrokes to <em>DirectX</em> games.</p>
-
-<p>Followed the installation instructions and wrote some code:
-``` c#
+<p><a href="https://github.com/jasonpang/Interceptor">Interceptor</a> promissed to simulate keystrokes to <em>DirectX</em> games.<br/>
+Followed the installation instructions and wrote some code:
+``` c# Nothing like loading a kernel module to heat things up&hellip;
 using Interceptor;
 using System.Threading;</p>
 
@@ -316,12 +319,23 @@ public static void Main (string[] args)
 <p>Marcos, my younger boy, the proud owner of the laptop I had recently transformed into a powerhouse development station,
 woke up. Just in time to hear the fantastic story of how his daddy spent a whole night trying to cheat in a game.</p>
 
-<p>&ldquo;Marcos, of course cheating is <strong>wrong</strong>. I did out of curiosity! You see, knowing how to bend the rules does <strong>not</strong>
+<p>&ldquo;Marcos, of course cheating is <strong>wrong</strong>. I did it out of curiosity! You see, knowing how to bend the rules does <strong>not</strong>
 mean you absolutelly have to. In fact, you can help make the world a better place if you know about this kind of stuff! (&hellip;)&rdquo;</p>
 
-<p>And it worked like a charm:
-<img src="/images/hell-yeah-jackpot.png" width="1024" height="800" title="&lsquo;To the victor go the spoils&rsquo;" >
+<p>There was a slight contemplative period of silence, while he looked puzzled to the slot machine being rolled with no
+human interaction, as if by <strong>Magic</strong>!</p>
+
+<p>After approximately 50 minutes and 5500 <strong>E</strong> key presses&hellip; <strong>JACKPOT</strong>!!
+<img src="/images/hell-yeah-jackpot.jpg" width="1024" height="800" title="&lsquo;To the victor go the spoils&rsquo;" >
 <img src="/images/hell-yeah-all-achievements.png" width="1024" height="800" title="&lsquo;100% achievements&hellip; I can finally rest in peace&rsquo;" ></p>
+
+<p>&ldquo;Daddy, why didn&rsquo;t you build a <em>Homer Drinking Bird</em>?&rdquo; &ndash; He asked</p>
+
+<p>&ldquo;What is that?&rdquo; &ndash; I replied</p>
+
+<p><img src="/images/homer-drinking-bird.png"></p>
+
+<p>Brilliant! :)</p>
 ]]></content>
   </entry>
   
