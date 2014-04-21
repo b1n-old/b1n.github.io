@@ -9,8 +9,9 @@
   <meta name="author" content="Marcio Ribeiro">
 
   
-  <meta name="description" content="
-">
+  <meta name="description" content="Some weeks ago I bought the SEGA Humble Bundle.
+Along with some good old classics that surely deserves posts on their own -like
+Altered Beast, Golden &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,7 +85,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/04/21/hell-yeah-cheat/">Hell Yeah Cheat</a></h1>
+      <h1 class="entry-title"><a href="/blog/2014/04/21/hell-yeah-cheat/">Hell Yeah Jackpot Cheat!</a></h1>
     
     
       <p class="meta">
@@ -107,7 +108,469 @@
   </header>
 
 
-  <div class="entry-content">
+  <div class="entry-content"><p>Some weeks ago I bought the <em>SEGA Humble Bundle</em>.
+Along with some good old classics that surely deserves posts on their own -like
+<em>Altered Beast</em>, <em>Golden Axe</em> and the fantastic <a href="http://store.steampowered.com/app/246580/">The Typing of The Dead: Overkill</a>&ndash;
+was <a href="http://store.steampowered.com/app/205230/">Hell Yeah! Wrath of the Dead Rabbit</a>.</p>
+
+<h2>Sonic on Steroids!</h2>
+
+<p><img src="/images/hell-yeah-splash.png" width="1024" height="800" title="'Sonic on Steroids!'" >
+Hell Yeah is a crazy action-adventure platformer, full of cartoon violence and toilet humor.
+Instant fun for all ages!
+Do not let the somewhat low <em>metacritic</em> score fool you. Hell Yeah! is <strong>crazy</strong> good.</p>
+
+<p>For days I have played it during my lunch break, and when it was over and the final boss was put out of his misery
+I wanted more, I wanted to get 100% achievements!</p>
+
+<p>There are currently 12 achievements in the game.
+After a couple hours 11 were down, just 1 left to go.
+But that last one proved to be hard to get&hellip;</p>
+
+<h2>The Jackpot</h2>
+
+<p>You have to hit <strong>JACKPOT</strong> (777) in the <em>Cassino</em> stage slot machines.
+And there I was, pressing the &lsquo;<strong>E</strong>&rsquo; key over and over, repeated times&hellip;
+Pretending it was fun to watch the symbols roll and then, after 10 minutes
+into this very tedious task I finally decided to do what every sane
+person in similar grounds would do&hellip; Break the rules! I mean, write a program!</p>
+
+<h2><s>Adventure</s> Programming Time!</h2>
+
+<p>Well, &ldquo;how hard can this be&rdquo; I thought.
+All the program has to do is press the &lsquo;<strong>E</strong>&rsquo; key like there is no tomorrow.
+Pausing once in a while so the game can process the command.</p>
+
+<p>I was on my younger sons&#8217; Windows 7 laptop, with no dev tools.
+Despite this harsh, non-dev-friendly environment, I was convinced that this
+tale would end quickly and bed would see a happier me with 100% achievements
+soon. I could not be more wrong&hellip;</p>
+
+<h3>Windows Script Turn</h3>
+
+<p>What is the quickest way get this done? <a href="http://en.wikipedia.org/wiki/Windows_Script_Host">WSH</a>, I choose you!</p>
+
+<figure class='code'><figcaption><span>Gotta love the simplicity imbued in all form of scripting&#8230;</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='vb.net'><span class='line'><span class="c">&#39; Create shell object that can &quot;type&quot; keys</span>
+</span><span class='line'><span class="k">Set</span> <span class="n">s</span> <span class="o">=</span> <span class="n">WScript</span><span class="p">.</span><span class="n">CreateObject</span><span class="p">(</span><span class="s">&quot;WScript.Shell&quot;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">Do</span>
+</span><span class='line'>  <span class="c">&#39; Focus the correct window and send the key</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">s</span><span class="p">.</span><span class="n">AppActivate</span><span class="p">(</span><span class="s">&quot;Hell Yeah!&quot;</span><span class="p">)</span> <span class="k">Then</span>
+</span><span class='line'>    <span class="n">s</span><span class="p">.</span><span class="n">SendKeys</span> <span class="s">&quot;e&quot;</span>
+</span><span class='line'>  <span class="k">End</span> <span class="k">If</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c">&#39; Giving us some time in case we want to kill the script</span>
+</span><span class='line'>  <span class="n">WScript</span><span class="p">.</span><span class="n">Sleep</span> <span class="mi">2000</span>
+</span><span class='line'><span class="k">Loop</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Everything was going smoothly according as planned.
+It was simple and beautiful, so beautiful that a tear of pure joy started to take form
+in the corner of my left eye and then&hellip; nothing&hellip;</p>
+
+<p>The game window was getting focused but nothing happened, no roll in the slot machine, just resounding silence.
+The &lsquo;<strong>E</strong>&rsquo; key was not being pressed, or at least not in a way the game would understand.</p>
+
+<p>By that time my wife was already asking me to go bed, but I was so close, or so I thought&hellip;
+It would be a shame to give up now. And started downloading <strong>Vim</strong> and the <strong>JDK</strong>&hellip;</p>
+
+<h3>Java Turn</h3>
+
+<p>Usually, Java should be far from the top if your main concern is get things done fast.
+But since we have <strong>java.awt.Robot</strong>, which sole purpose is to solve problems like ours, guess
+that changes the picture.</p>
+
+<figure class='code'><figcaption><span>What was that word again? Oh yes, verbosity&#8230;</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kn">import</span> <span class="nn">java.awt.Robot</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">java.awt.event.KeyEvent</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Jackpot</span> <span class="o">{</span>
+</span><span class='line'>  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+</span><span class='line'>    <span class="n">Robot</span> <span class="n">bot</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Robot</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// Giving us some time to focus the correct window manually</span>
+</span><span class='line'>    <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="mi">5000</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// Press and Release the E key </span>
+</span><span class='line'>    <span class="c1">// Give the game some time to process the key press</span>
+</span><span class='line'>    <span class="k">while</span> <span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>      <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">bot</span><span class="o">.</span><span class="na">keyPress</span><span class="o">(</span><span class="n">KeyEvent</span><span class="o">.</span><span class="na">VK_E</span><span class="o">);</span>
+</span><span class='line'>        <span class="n">bot</span><span class="o">.</span><span class="na">keyRelease</span><span class="o">(</span><span class="n">KeyEvent</span><span class="o">.</span><span class="na">VK_E</span><span class="o">);</span>
+</span><span class='line'>        <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="mi">500</span><span class="o">);</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="c1">// Give us some time to kill the program</span>
+</span><span class='line'>      <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="mi">1000</span><span class="o">);</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The key was being sent, I could see it but again, nothing happened in the game.
+I was so optimistic about Robot, it helped me in the past, did not expect it to fail me now.</p>
+
+<p>My wife fell asleep watching classic Pink Panther cartoons.
+Fixed the blanket and kissed her good night. I had a mission to accomplish!</p>
+
+<p>We were getting into the late hours, further into the night.
+Cats fighting and hounds barking could sporadically be heard on the streets, time to master
+focus and boost solution making:
+* <strong>Headphones</strong>: <em>Check</em>
+* <strong>Good Music</strong>: <em>Check</em>
+* <strong>Energy Drink</strong>: <em>Check</em> <em>Check</em> <em>Check</em></p>
+
+<p>Nothing can stop me now, I will get this done!</p>
+
+<p>Think, what is wrong? Why is the game not getting the keypress events?</p>
+
+<p>What about sending the keys in raw directly to Win32 API?
+Calling <em>SendInput</em> from <em>user32.dll</em> should do it.
+The options are JNI, C/C++ and C#.
+Started downloading <em>.NET SDK</em> and <a href="http://en.wikipedia.org/wiki/Xamarin">Xamarin</a>.</p>
+
+<h4>.NET Turn</h4>
+
+<p>After reading several pages on <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms646310(v=vs.85).aspx">MSDN</a> and
+related forums about how the <em>SendInput</em> function and the <strong>INPUT</strong> data structure works, things started making sense.</p>
+
+<p>Collected several pieces of code and experimentations and came up with the following beast:</p>
+
+<figure class='code'><figcaption><span>Hey little fly, get ready to be <s>squashed</s> cannon balled! Rigmarole FTW!</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+</pre></td><td class='code'><pre><code class='c#'><span class='line'><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+</span><span class='line'><span class="k">using</span> <span class="nn">System.ComponentModel</span><span class="p">;</span>
+</span><span class='line'><span class="k">using</span> <span class="nn">System.Runtime.InteropServices</span><span class="p">;</span>
+</span><span class='line'><span class="k">using</span> <span class="nn">System.Threading</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">namespace</span> <span class="nn">Jackpot</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="k">class</span> <span class="nc">Jackpot</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="k">struct</span> <span class="nc">INPUT</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="k">public</span> <span class="n">INPUTType</span> <span class="n">type</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">public</span> <span class="n">INPUTUnion</span> <span class="n">Event</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="na">    [StructLayout (LayoutKind.Explicit)]</span>
+</span><span class='line'>    <span class="k">struct</span> <span class="nc">INPUTUnion</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'><span class="na">      [FieldOffset (0)]</span>
+</span><span class='line'>      <span class="k">internal</span> <span class="n">MOUSEINPUT</span> <span class="n">mi</span><span class="p">;</span>
+</span><span class='line'><span class="na">      [FieldOffset (0)]</span>
+</span><span class='line'>      <span class="k">internal</span> <span class="n">KEYBDINPUT</span> <span class="n">ki</span><span class="p">;</span>
+</span><span class='line'><span class="na">      [FieldOffset (0)]</span>
+</span><span class='line'>      <span class="k">internal</span> <span class="n">HARDWAREINPUT</span> <span class="n">hi</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="na">    [StructLayout (LayoutKind.Sequential)]</span>
+</span><span class='line'>    <span class="k">struct</span> <span class="nc">MOUSEINPUT</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="k">public</span> <span class="kt">int</span> <span class="n">dx</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">public</span> <span class="kt">int</span> <span class="n">dy</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">public</span> <span class="kt">int</span> <span class="n">mouseData</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">public</span> <span class="kt">int</span> <span class="n">dwFlags</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">public</span> <span class="kt">uint</span> <span class="n">time</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">public</span> <span class="n">IntPtr</span> <span class="n">dwExtraInfo</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="na">    [StructLayout (LayoutKind.Sequential)]</span>
+</span><span class='line'>    <span class="k">struct</span> <span class="nc">KEYBDINPUT</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="k">public</span> <span class="kt">short</span> <span class="n">wVk</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">public</span> <span class="kt">short</span> <span class="n">wScan</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">public</span> <span class="n">KEYEVENTF</span> <span class="n">dwFlags</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">public</span> <span class="kt">int</span> <span class="n">time</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">public</span> <span class="n">IntPtr</span> <span class="n">dwExtraInfo</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="na">    [StructLayout (LayoutKind.Sequential)]</span>
+</span><span class='line'>    <span class="k">struct</span> <span class="nc">HARDWAREINPUT</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="k">public</span> <span class="kt">int</span> <span class="n">uMsg</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">public</span> <span class="kt">short</span> <span class="n">wParamL</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">public</span> <span class="kt">short</span> <span class="n">wParamH</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">enum</span> <span class="n">INPUTType</span> <span class="p">:</span> <span class="kt">uint</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="n">INPUT_KEYBOARD</span> <span class="p">=</span> <span class="m">1</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="na">    [Flags]</span>
+</span><span class='line'>    <span class="k">enum</span> <span class="n">KEYEVENTF</span> <span class="p">:</span> <span class="kt">uint</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="n">EXTENDEDKEY</span> <span class="p">=</span> <span class="m">0</span><span class="n">x0001</span><span class="p">,</span>
+</span><span class='line'>      <span class="n">KEYUP</span> <span class="p">=</span> <span class="m">0</span><span class="n">x0002</span><span class="p">,</span>
+</span><span class='line'>      <span class="n">SCANCODE</span> <span class="p">=</span> <span class="m">0</span><span class="n">x0008</span><span class="p">,</span>
+</span><span class='line'>      <span class="n">UNICODE</span> <span class="p">=</span> <span class="m">0</span><span class="n">x0004</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">const</span> <span class="kt">short</span> <span class="n">KEY_E</span> <span class="p">=</span> <span class="m">0</span><span class="n">x0012</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="na">    [DllImport (&quot;user32.dll&quot;)]</span>
+</span><span class='line'>    <span class="k">static</span> <span class="k">extern</span> <span class="n">UInt32</span> <span class="nf">SendInput</span> <span class="p">(</span><span class="kt">int</span> <span class="n">numberOfInputs</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">[]</span> <span class="n">inputs</span><span class="p">,</span> <span class="kt">int</span> <span class="n">sizeOfInputStructure</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">private</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">SendKey</span> <span class="p">(</span><span class="kt">short</span> <span class="n">key</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="c1">// create input events as unicode with first down, then up</span>
+</span><span class='line'>      <span class="n">INPUT</span><span class="p">[]</span> <span class="n">inputs</span> <span class="p">=</span> <span class="k">new</span> <span class="n">INPUT</span><span class="p">[</span><span class="m">2</span><span class="p">];</span>
+</span><span class='line'>      <span class="n">inputs</span> <span class="p">[</span><span class="m">0</span><span class="p">].</span><span class="n">type</span> <span class="p">=</span> <span class="n">inputs</span> <span class="p">[</span><span class="m">1</span><span class="p">].</span><span class="n">type</span> <span class="p">=</span> <span class="n">INPUTType</span><span class="p">.</span><span class="n">INPUT_KEYBOARD</span><span class="p">;</span>
+</span><span class='line'>      <span class="n">inputs</span> <span class="p">[</span><span class="m">0</span><span class="p">].</span><span class="n">Event</span><span class="p">.</span><span class="n">ki</span><span class="p">.</span><span class="n">dwFlags</span> <span class="p">=</span> <span class="n">inputs</span> <span class="p">[</span><span class="m">1</span><span class="p">].</span><span class="n">Event</span><span class="p">.</span><span class="n">ki</span><span class="p">.</span><span class="n">dwFlags</span> <span class="p">=</span> <span class="n">KEYEVENTF</span><span class="p">.</span><span class="n">SCANCODE</span><span class="p">;</span>
+</span><span class='line'>      <span class="n">inputs</span> <span class="p">[</span><span class="m">0</span><span class="p">].</span><span class="n">Event</span><span class="p">.</span><span class="n">ki</span><span class="p">.</span><span class="n">wScan</span> <span class="p">=</span> <span class="n">inputs</span> <span class="p">[</span><span class="m">1</span><span class="p">].</span><span class="n">Event</span><span class="p">.</span><span class="n">ki</span><span class="p">.</span><span class="n">wScan</span> <span class="p">=</span> <span class="n">key</span><span class="p">;</span>
+</span><span class='line'>      <span class="n">inputs</span> <span class="p">[</span><span class="m">1</span><span class="p">].</span><span class="n">Event</span><span class="p">.</span><span class="n">ki</span><span class="p">.</span><span class="n">dwFlags</span> <span class="p">|=</span> <span class="n">KEYEVENTF</span><span class="p">.</span><span class="n">KEYUP</span><span class="p">;</span>
+</span><span class='line'>      <span class="n">SendInput</span> <span class="p">(</span><span class="n">inputs</span><span class="p">.</span><span class="n">Length</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">Marshal</span><span class="p">.</span><span class="n">SizeOf</span> <span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">INPUT</span><span class="p">)));</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span> <span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="c1">// Giving us some time to focus the correct window manually</span>
+</span><span class='line'>      <span class="n">System</span><span class="p">.</span><span class="n">Threading</span><span class="p">.</span><span class="n">Thread</span><span class="p">.</span><span class="n">Sleep</span> <span class="p">(</span><span class="m">5000</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">while</span> <span class="p">(</span><span class="k">true</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="m">20</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span> <span class="p">{</span>
+</span><span class='line'>          <span class="n">SendKey</span> <span class="p">(</span><span class="n">KEY_E</span><span class="p">);</span>
+</span><span class='line'>          <span class="n">Thread</span><span class="p">.</span><span class="n">Sleep</span> <span class="p">(</span><span class="m">500</span><span class="p">);</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>        <span class="n">Thread</span><span class="p">.</span><span class="n">Sleep</span> <span class="p">(</span><span class="m">2000</span><span class="p">);</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Yes, that is a lot more code than I thought was necessary to emulate a simple keyPress using the Win32 API and guess what&hellip; it does <strong>NOT</strong> work.
+The reasons why this does not work are beyond me but I bet DirectInput is to blame.</p>
+
+<p>No more cat fights or barks, birds started singing instead, enunciating the first sheds of sunlight.</p>
+
+<p>My hope was beaten to a pulp.
+I was tired, very tired and suddenly noticed I had not eaten for the past several hours.
+Headaches started consuming me&hellip; Giving up crossed my mind but not before one last shot.
+I can do this!</p>
+
+<h4>Interceptor saves the day</h4>
+
+<p>Light could be seen at the end of tunnel. Hopefully it was not the train.</p>
+
+<p><a href="https://github.com/jasonpang/Interceptor">Interceptor</a> promissed to simulate keystrokes to <em>DirectX</em> games.</p>
+
+<p>Followed the installation instructions and wrote some code:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+</pre></td><td class='code'><pre><code class='c#'><span class='line'><span class="k">using</span> <span class="nn">Interceptor</span><span class="p">;</span>
+</span><span class='line'><span class="k">using</span> <span class="nn">System.Threading</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">namespace</span> <span class="nn">Jackpot</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="k">public</span> <span class="k">class</span> <span class="nc">Jackpot</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="k">private</span> <span class="k">static</span> <span class="n">Input</span> <span class="n">input</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Input</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span> <span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="c1">// Give us some time to focus the correct window manually</span>
+</span><span class='line'>      <span class="n">Thread</span><span class="p">.</span><span class="n">Sleep</span> <span class="p">(</span><span class="m">5000</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="c1">// Load driver</span>
+</span><span class='line'>      <span class="n">input</span><span class="p">.</span><span class="n">KeyboardFilterMode</span> <span class="p">=</span> <span class="n">KeyboardFilterMode</span><span class="p">.</span><span class="n">All</span><span class="p">;</span>
+</span><span class='line'>      <span class="n">input</span><span class="p">.</span><span class="n">KeyPressDelay</span> <span class="p">=</span> <span class="m">10</span><span class="p">;</span>
+</span><span class='line'>      <span class="n">input</span><span class="p">.</span><span class="n">Load</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">while</span> <span class="p">(</span><span class="k">true</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="m">20</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span> <span class="p">{</span>
+</span><span class='line'>          <span class="n">input</span><span class="p">.</span><span class="n">SendKeys</span> <span class="p">(</span><span class="n">Keys</span><span class="p">.</span><span class="n">E</span><span class="p">);</span>
+</span><span class='line'>          <span class="n">Thread</span><span class="p">.</span><span class="n">Sleep</span> <span class="p">(</span><span class="m">500</span><span class="p">);</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>        <span class="n">Thread</span><span class="p">.</span><span class="n">Sleep</span> <span class="p">(</span><span class="m">1000</span><span class="p">);</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="p">~</span><span class="n">Jackpot</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>      <span class="n">input</span><span class="p">.</span><span class="n">Unload</span> <span class="p">();</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Marcos, my younger boy, the proud owner of the laptop I had recently transformed into a powerhouse development station,
+woke up. Just in time to hear the fantastic story of how his daddy spent a whole night trying to cheat in a game.</p>
+
+<p>&ldquo;Marcos, of course cheating is <strong>wrong</strong>. I did out of curiosity! You see, knowing how to bend the rules does <strong>not</strong>
+mean you absolutelly have to. In fact, you can help make the world a better place if you know about this kind of stuff! (&hellip;)&rdquo;</p>
+
+<p>And it worked like a charm:
+<img src="/images/hell-yeah-jackpot.png" width="1024" height="800" title="'To the victor go the spoils'" ></p>
 </div>
   
   
@@ -128,7 +591,7 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2014/04/21/hell-yeah-cheat/">Hell Yeah Cheat</a>
+        <a href="/blog/2014/04/21/hell-yeah-cheat/">Hell Yeah Jackpot Cheat!</a>
       </li>
     
   </ul>
