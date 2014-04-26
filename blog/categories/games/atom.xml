@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Games | Paradoxical Delusions]]></title>
   <link href="http://b1n.github.io/blog/categories/games/atom.xml" rel="self"/>
   <link href="http://b1n.github.io/"/>
-  <updated>2014-04-21T14:08:26+00:00</updated>
+  <updated>2014-04-26T04:33:06+00:00</updated>
   <id>http://b1n.github.io/</id>
   <author>
     <name><![CDATA[Marcio Ribeiro]]></name>
@@ -14,10 +14,10 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Hell Yeah Jackpot Cheat!]]></title>
-    <link href="http://b1n.github.io/blog/2014/04/21/hell-yeah-cheat/"/>
+    <title type="html"><![CDATA[Perseverance]]></title>
+    <link href="http://b1n.github.io/blog/2014/04/21/perseverance/"/>
     <updated>2014-04-21T04:29:50+00:00</updated>
-    <id>http://b1n.github.io/blog/2014/04/21/hell-yeah-cheat</id>
+    <id>http://b1n.github.io/blog/2014/04/21/perseverance</id>
     <content type="html"><![CDATA[<p>Some weeks ago I bought the <em>SEGA Humble Bundle</em>.
 Along with some good old classics that surely deserves posts on their own -like
 <em>Altered Beast</em>, <em>Golden Axe</em> and the fantastic <a href="http://store.steampowered.com/app/246580/">The Typing of The Dead: Overkill</a>&ndash;
@@ -89,7 +89,7 @@ It would be a shame to give up now. And started downloading <strong>Vim</strong>
 
 <h3>Java Turn</h3>
 
-<p>Usually, Java should be far from the top if your main concern is get things done fast.
+<p>Usually, Java should be far from the top if your main concern is getting things done fast.
 But since we have <strong>java.awt.Robot</strong>, which sole purpose is to solve problems like ours, guess
 that changes the picture.</p>
 
